@@ -1,0 +1,46 @@
+{% extends 'products/base.html' %}
+
+<!--    <div class="container">-->
+<!--        <a style='float:left;' href="{% url 'products:show_products' %}" class="btn btn-secondary">Powrót</a>-->
+<!--              <div class="card mb-3" style="width: 18rem;">-->
+<!--                  <img src="{{ product.image.url }}" class="card-img-top" alt="Card image tap">-->
+<!--                  <div class="card-body">-->
+<!--                    <h5 class="card-title m-1">{{ product.name }}</h5>-->
+<!--                    <h5 class="card-subtitle m-1">{{ product.price }} zł</h5>-->
+<!--                    <p class="card-text m-1">{{ product.description|linebreaks }}</p>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--    </div>-->
+
+
+{% block content %}
+<div class="container">
+    <a href="{% url 'products:show_products' %}" class="btn btn-secondary mx-3 my-3">&laquo; Powrót</a>
+    <div class="card text-center" xmlns:width="http://www.w3.org/1999/xhtml">
+      <div class="card-body">
+        <h3 class="card-title">{{ product.name }}</h3>
+        <img class="img-fluid rounded" src="{{ product.image.url }}" style="width:400px;height:500px;" alt="Card image tap">
+        <h5 class="card-subtitle m-1">{{ product.price }} zł</h5>
+        <p class="card-text">{{ product.description|linebreaks }}</p>
+        <a href="#" class="btn btn-secondary">Do koszyka &raquo;</a>
+      </div>
+    </div>
+</div>
+
+
+<!--<div class="card mb-3" style="max-width: 540px;">-->
+<!--  <div class="row g-0">-->
+<!--    <div class="col-md-4">-->
+<!--      <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">-->
+<!--    </div>-->
+<!--    <div class="col-md-8">-->
+<!--      <div class="card-body">-->
+<!--        <h3 class="card-title">{{ product.name }}</h3>-->
+<!--        <p class="card-text">{{ product.description|linebreaks }}</p>-->
+<!--        <p class="card-text"><small class="text-muted">{{ product.price }} zł</small></p>-->
+<!--        <a href="#" class="btn btn-secondary">Do koszyka</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+{% endblock content %}
